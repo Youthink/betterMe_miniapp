@@ -7,7 +7,7 @@ export default () => {
     <View className="app">
       <View className="header">
         <View className="text">
-          编辑
+          首页
         </View>
       </View>
     </View>

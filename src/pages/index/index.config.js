@@ -1,3 +1,3 @@
 module.exports = {
-  navigationBarTitleText: '习惯',
+  navigationBarTitleText: '首页',
 };
