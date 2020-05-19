@@ -1,0 +1,54 @@
+.habit-page {
+  padding: 20rpx;
+  .habits-container {
+    &.view-scroll-y {
+      max-height: 88vh;
+    }
+    .habits {
+      .status-title {
+        font-size: 30rpx;
+        color: #666;
+      }
+    }
+    .habit-list {
+      margin-top: 10rpx;
+      > view {
+        position: relative;
+        padding: 5rpx 20rpx 10rpx;
+        margin: 15rpx 0;
+        color: #FFF;
+        border-radius: 10rpx;
+        .habit-info {
+          display: inline-flex;
+          flex-direction: column;
+          .name {
+            margin: 1px 0;
+            font-size: 32rpx;
+          }
+          .score {
+            margin: 1px 0;
+            font-size: 22rpx;
+            color: rgba(255,255,255,.7);
+          }
+        }
+        .bg-num {
+          font-size: 60px;
+          position: absolute;
+          color: rgba(255,255,255,.3);
+          top: 0rpx;
+          left: 45%;
+          text {
+            font-size: 18rpx;
+            margin-left: 3rpx;
+            color: rgba(255,255,255, .5);
+          }
+        }
+        .operation-btn {
+          float: right;
+          text-align: center;
+          line-height: 3.5;
+        }
+      }
+    }
+  }
+}
