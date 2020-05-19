@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { View, Text } from 'remax/wechat';
-import './index.css';
+import './index.scss';
 
 export default () => {
   return (
