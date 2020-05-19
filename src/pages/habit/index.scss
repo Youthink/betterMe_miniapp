@@ -46,7 +46,10 @@
         .operation-btn {
           float: right;
           text-align: center;
-          line-height: 3.5;
+          line-height: 1.5;
+          .habit-check-icon {
+            margin: 0px 8px;
+          }
         }
       }
     }
