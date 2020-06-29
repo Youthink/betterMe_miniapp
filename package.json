@@ -8,11 +8,10 @@
   "author": "Youthink <hufy3651@foxmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "remax build -t wechat -w",
+    "dev": "remax build -m -t wechat -w",
     "build": "cross-env NODE_ENV=production remax build -t wechat"
   },
   "dependencies": {
-    "@remax/plugin-sass": "^1.0.0",
     "hash-index": "^3.0.0",
     "lodash.sample": "^4.2.1",
     "react": "^16.12.0",
@@ -20,6 +19,7 @@
     "weui-miniprogram": "^1.0.3"
   },
   "devDependencies": {
-    "cross-env": "^7.0.2"
+    "cross-env": "^7.0.2",
+    "@remax/plugin-sass": "^1.0.0"
   }
 }
