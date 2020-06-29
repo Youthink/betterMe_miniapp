@@ -10,16 +10,17 @@ module.exports = {
   tabBar: {
     list: [
       {
-        "pagePath": "pages/index/index",
-        "text": "首页"
-      },
-      {
         "pagePath": "pages/habit/index",
         "text": "习惯"
       },
       {
         "pagePath": "pages/index/index",
         "text": "奖励"
+      },
+      /*
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
       },
       {
         "pagePath": "pages/index/index",
@@ -28,7 +29,11 @@ module.exports = {
       {
         "pagePath": "pages/habit/index",
         "text": "我的"
-      }
+        }
+       */
     ]
   },
+  useExtendedLib: {
+    weui: true
+  }
 };
