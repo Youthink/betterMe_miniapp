@@ -1,5 +1,9 @@
 .habit-page {
   padding: 20rpx;
+  .add-habit-btn {
+    display: flex;
+    justify-content: flex-end;
+  }
   .habits-container {
     &.view-scroll-y {
       max-height: 88vh;
