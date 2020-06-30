@@ -1,6 +1,5 @@
 import React, { useState }                               from 'react';
 import { View, Text, Radio, Label, Form, Input, Picker } from 'remax/wechat';
-import { pickColorByName }                               from '@/utils/helper';
 import Icon                                              from 'weui-miniprogram/miniprogram_dist/icon/icon';
 import Dialog                                            from 'weui-miniprogram/miniprogram_dist/dialog/dialog';
 import Cells                                             from 'weui-miniprogram/miniprogram_dist/cells/cells';
