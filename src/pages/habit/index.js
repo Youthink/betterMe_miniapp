@@ -35,7 +35,6 @@ export default () => {
               <View
                 key={o.id}
                 onClick={() => {}}
-                style={{ background: pickColorByName(o.name) }}
               >
                 <View className="habit-info">
                   <Text className="name">{o.name}</Text>
@@ -112,9 +111,6 @@ export default () => {
               <Label className="radio">
                 <Radio value="r2" />困难
               </Label>
-            </Cell>
-            <Cell title="打卡日">
-              <Picker mode='multiSelector' range={multiArray} />
             </Cell>
           </Cells>
         </Form>
