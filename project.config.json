@@ -1,26 +1,13 @@
 {
-  "miniprogramRoot": "dist/",
+  "miniprogramRoot": "./dist",
+  "projectname": "betterMe_miniapp",
+  "description": "习惯清单自律打卡小程序",
+  "appid": "touristappid",
   "setting": {
-    "urlCheck": false,
+    "urlCheck": true,
     "es6": false,
-    "postcss": true,
-    "minified": true,
-    "newFeature": true,
-    "coverView": true,
-    "autoAudits": false,
-    "uglifyFileName": false,
-    "checkInvalidKey": true,
-    "checkSiteMap": true,
-    "uploadWithSourceMap": true,
-    "babelSetting": {
-      "ignore": [],
-      "disablePlugins": [],
-      "outputPath": ""
-    },
-    "bundle": false
+    "postcss": false,
+    "minified": false
   },
-  "compileType": "miniprogram",
-  "simulatorType": "wechat",
-  "simulatorPluginLibVersion": {},
-  "condition": {}
+  "compileType": "miniprogram"
 }
