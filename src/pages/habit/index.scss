@@ -1,15 +1,25 @@
 .habit-page {
   padding: 20rpx;
 
-  .btn-box {
+  .add-habit-btn {
+    position: fixed;
+    bottom: 60rpx;
+    right: 30rpx;
+    z-index: 100;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    background: Mediumpurple;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0,.2);
+    border-radius: 100%;
+    width: 80rpx;
+    height: 80rpx;
   }
 
   .summary-money {
     display: flex;
     justify-content: space-around;
-    margin: 30rpx auto 20rpx;
+    margin: 0rpx auto 20rpx;
     background: Mediumpurple;
     border-radius: 10rpx;
     .item {

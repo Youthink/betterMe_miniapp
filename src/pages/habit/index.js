@@ -92,11 +92,10 @@ export default () => {
 
   return (
     <View className="habit-page">
-      <View className="btn-box"
+      <View className="add-habit-btn"
         onClick={() => setShowAddHabit(true)}
       >
-        <AtIcon value="equalizer" color="#333" size="22" />
-        <AtIcon value="add" color="#333" size="22" />
+        <AtIcon value="add" color="#E9E2F8" size="22" />
       </View>
       <View className="summary-money">
         <View className="item">
