@@ -1,6 +1,6 @@
 import React, { useState }                                               from 'react';
-import { View, Button, Text, Radio, Label, Form, Input, Picker, Image }         from '@tarojs/components'
-import { AtIcon, AtModal, AtModalHeader, AtModalContent, AtModalAction } from 'taro-ui'
+import { View, Button, Text, Radio, Label, Form, Input, Image }         from '@tarojs/components'
+import { AtIcon, AtModal, AtModalHeader, AtModalContent, AtModalAction, AtInput, AtRate } from 'taro-ui'
 import moneyIcon from '@/assets/money.png';
 import './index.scss';
 
@@ -36,6 +36,18 @@ const habitList = [
   { id: 4, name: '☀️ 早起', score: 5, maxContinueDays: 114 },
   { id: 5, name: '🐱 铲猫屎', score: 6, maxContinueDays: 1 },
 ];
+
+const dateOptions = [
+  { value: 1, label: '周一' },
+  { value: 2, label: '周二' },
+  { value: 3, label: '周三' },
+  { value: 4, label: '周四' },
+  { value: 5, label: '周五' },
+  { value: 6, label: '周六' },
+  { value: 7, label: '周日' }
+];
+
+const habitLevel = ['简单', '一般', '困难'];
 
 export default () => {
   const [showAddHabit, setShowAddHabit] = useState(false);
@@ -123,19 +135,28 @@ export default () => {
 
       <AtModal isOpened={showAddHabit}>
         <AtModalHeader>添加习惯</AtModalHeader>
-        <AtModalContent>
-          <Form>
-            <Input />
-            <Label className="radio">
-              <Radio value="r1" checked="true"/>简单
-            </Label>
-            <Label className="radio">
-              <Radio value="r2" />一般
-            </Label>
-            <Label className="radio">
-              <Radio value="r2" />困难
-            </Label>
-          </Form>
+        <AtModalContent className="form-edit-habit">
+          <AtInput
+            className="habit-name"
+            name="habitName"
+            title="习惯名称"
+            type="text"
+          />
+          <View className="habit-level">
+            <Text className="label">打卡难度</Text>
+            <AtRate max={3} margin={30} />
+            <Text className="desc">{habitLevel[0]}</Text>
+          </View>
+          <View className="habit-date">
+            <Text className="label">打卡日</Text>
+            <View className="checkbox-date">
+              {dateOptions.map(o => (
+                <View className="checkbox-item" key={o.value}>
+                  {o.label}
+                </View>
+              ))}
+            </View>
+          </View>
         </AtModalContent>
         <AtModalAction>
           <Button onClick={() => setShowAddHabit(false)}>取消</Button>

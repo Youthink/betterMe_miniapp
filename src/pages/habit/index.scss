@@ -100,4 +100,76 @@
       }
     }
   }
+
+  .form-edit-habit {
+    padding: 0;
+    .habit-name {
+      .at-input {
+        padding: 15rpx 0;
+      }
+
+      .at-input__title {
+        width: 130rpx;
+      }
+
+      label {
+        font-size: 28rpx;
+      }
+    }
+
+    .habit-level {
+      display: flex;
+      padding: 20rpx 0;
+      position: relative;
+
+      .label {
+        margin: 0 30rpx 0 32rpx;
+        font-size: 28rpx;
+      }
+
+      .desc {
+        font-size: 22rpx;
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        transform-origin: center;
+        box-sizing: border-box;
+        pointer-events: none;
+        top: -50%;
+        left: -50%;
+        right: -72%;
+        bottom: -50%;
+        border: 0 solid #d6e4ef;
+        transform: scale(0.5);
+        border-bottom-width: 1PX;
+      }
+    }
+
+    .habit-date {
+      display: flex;
+      padding: 20rpx 0;
+
+      .label {
+        margin: 0 60rpx 0 32rpx;
+        font-size: 28rpx;
+        min-width: 60rpx;
+      }
+      .checkbox-date {
+        display: flex;
+        font-size: 20rpx;
+
+        .checkbox-item {
+          background: Mediumpurple;
+          color: #FFF;
+          width: 20rpx;
+          padding: 6rpx 8rpx;
+          text-align: center;
+          margin-right: 16rpx;
+          border-radius: 2rpx;
+        }
+      }
+    }
+  }
 }
