@@ -1,9 +1,37 @@
 .habit-page {
   padding: 20rpx;
 
-  .add-habit-btn {
+  .btn-box {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+  }
+
+  .summary-money {
+    display: flex;
+    justify-content: space-around;
+    margin: 30rpx auto 20rpx;
+    background: Mediumpurple;
+    border-radius: 10rpx;
+    .item {
+      text-align: center;
+      padding: 20rpx;
+      .total {
+        font-size: 36rpx;
+        font-weight: 500;
+        color: #FFF;
+      }
+      .desc {
+        display: flex;
+        align-items: center;
+        font-size: 22rpx;
+        color: rgba(255, 255, 255, .6);
+
+        .coin {
+          height: 35rpx;
+          width: 35rpx;
+        }
+      }
+    }
   }
 
   .habits-container {
@@ -13,16 +41,19 @@
 
     .habits {
       .status-title {
-        font-size: 30rpx;
+        font-size: 26rpx;
         color: #666;
       }
     }
 
     .habit-list {
-      margin-top: 10rpx;
+      margin: 25rpx auto;
 
       > view {
         position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         padding: 5rpx 20rpx 10rpx;
         margin: 15rpx 0;
         color: #FFF;
@@ -54,15 +85,6 @@
             font-size: 18rpx;
             margin-left: 3rpx;
             color: rgba(255,255,255, .5);
-          }
-        }
-
-        .operation-btn {
-          float: right;
-          text-align: center;
-          line-height: 1.5;
-          .habit-check-icon {
-            margin: 0px 8px;
           }
         }
       }

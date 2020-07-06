@@ -1,20 +1,21 @@
 import React, { useState }                                               from 'react';
-import { View, Button, Text, Radio, Label, Form, Input, Picker }         from '@tarojs/components'
+import { View, Button, Text, Radio, Label, Form, Input, Picker, Image }         from '@tarojs/components'
 import { AtIcon, AtModal, AtModalHeader, AtModalContent, AtModalAction } from 'taro-ui'
+import moneyIcon from '@/assets/money.png';
 import './index.scss';
 
 const colorArr = [
-  'Blueviolet',
+  'Darkorchid',
+  // 'Blueviolet',
   'Coral',
-  'Cadetblue',
+  // 'Cadetblue',
   'Cornflowerblue',
   'Darkseagreen',
-  'Darkorchid',
-  'Darkcyan',
-  'Deeppink',
-  'Deepskyblue',
+  // 'Darkcyan',
+  // 'Deeppink',
+  // 'Deepskyblue',
   'Dodgerblue',
-  'Goldenrod',
+  // 'Goldenrod',
   'Hotpink',
   'indianred',
   'Limegreen',
@@ -45,37 +46,36 @@ export default () => {
       return null
     }
 
-    const title = type === 'init' ? '未完成的习惯' : '已完成的习惯';
+    const title = type === 'init' ? '今日待完成' : type === 'all' ? '今日无需打卡' : '今日已打卡';
     const action = type === 'init' ? '' : 'CANCEL';
-    const iconType = type === 'completed' ? 'check' : 'check-circle';
+    const iconType = type === 'init' ? 'check-circle' : 'lightning-bolt';
+    const habitBgColor = o => type === 'init' ? colorArr[o.id] : 'lightsteelblue';
     return (
       <View className="habits">
-        <Text class="status-title">{`${title}（${lists.length || 0} 个）${type === 'init' && '(预计可获得 400 金币)'}`}</Text>
+        <Text class="status-title">{`${title}（${lists.length || 0} 个）`}</Text>
         <View className="habit-list">
           {lists.map(o => {
             return (
               <View
                 key={o.id}
                 onClick={() => {}}
-                style={{ background: colorArr[o.id] }}
+                style={{ background: habitBgColor(o) }}
               >
                 <View className="habit-info">
                   <Text className="name">{o.name}</Text>
-                  <Text className="score">{o.score}分</Text>
+                  <Text className="score">{o.score}金币</Text>
                 </View>
                 {o.maxContinueDays &&
-                <Text className="bg-num">
+                <View className="bg-num">
                   {o.maxContinueDays}
                   <Text>连续天数</Text>
-                </Text>
-                }
-                <View className="operation-btn">
-                  <AtIcon
-                    value={iconType}
-                    color="rgba(255, 255, 255, .8)"
-                    size="25"
-                  />
                 </View>
+                }
+                <AtIcon
+                  value={iconType}
+                  color="rgba(255, 255, 255, .8)"
+                  size="25"
+                />
               </View>
             )
           })}
@@ -90,23 +90,36 @@ export default () => {
     }
   }
 
-
-
   return (
     <View className="habit-page">
-      <View className="header">
-        共 4000 金币  去使用
+      <View className="btn-box"
+        onClick={() => setShowAddHabit(true)}
+      >
+        <AtIcon value="equalizer" color="#333" size="22" />
+        <AtIcon value="add" color="#333" size="22" />
       </View>
-      <View className="add-habit-btn" onClick={() => setShowAddHabit(true)}>
-        <AtIcon
-          value="add"
-          color="rgba(0, 0, 0, .6)"
-          size="22"
-        />
+      <View className="summary-money">
+        <View className="item">
+          <View className="total">
+            4000
+          </View>
+          <View className="desc">
+            <Text>累计金币</Text>
+            <Image className="coin" src={moneyIcon} mode="widthFix" />
+        </View>
+        </View>
+        <View className="item">
+          <View className="total">200</View>
+          <View className="desc">
+            <Text>今日可获得</Text>
+            <Image className="coin" src={moneyIcon} mode="widthFix" />
+          </View>
+        </View>
       </View>
       <View className="view-scroll-y habits-container">
         {renderHabitList(habitList, 'init')}
         {renderHabitList(habitList, 'completed')}
+        {renderHabitList(habitList, 'all')}
       </View>
 
       <AtModal isOpened={showAddHabit}>
