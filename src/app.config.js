@@ -1,7 +1,7 @@
 export default {
   pages: [
-    'pages/index/index',
-    'pages/habit/index'
+    'pages/habit/index',
+    'pages/award/index'
   ],
   window: {
     navigationBarTitleText: 'betterMe',
@@ -18,7 +18,7 @@ export default {
         text: "习惯"
       },
       {
-        pagePath: "pages/index/index",
+        pagePath: "pages/award/index",
         iconPath: './assets/gift.png',
         selectedIconPath: './assets/award-checked.png',
         text: "奖励"
