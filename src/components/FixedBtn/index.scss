@@ -1,0 +1,14 @@
+  .add-btn-component {
+    position: fixed;
+    bottom: 60rpx;
+    right: 30rpx;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: Mediumpurple;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0,.2);
+    border-radius: 100%;
+    width: 80rpx;
+    height: 80rpx;
+  }

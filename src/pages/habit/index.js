@@ -1,7 +1,17 @@
-import React, { useState }                                               from 'react';
-import { View, Button, Text, Radio, Label, Form, Input, Image }         from '@tarojs/components'
-import { AtIcon, AtModal, AtModalHeader, AtModalContent, AtModalAction, AtInput, AtRate } from 'taro-ui'
-import moneyIcon from '@/assets/money.png';
+import React, { useState } from 'react'
+import moneyIcon           from '@/assets/money.png'
+import AddBtn              from '@/components/FixedBtn'
+
+import {
+  View, Button, Text, Radio,
+  Label, Form, Input, Image
+} from '@tarojs/components'
+
+import {
+  AtIcon, AtModal, AtModalHeader, AtModalContent,
+  AtModalAction, AtInput, AtRate
+} from 'taro-ui'
+
 import './index.scss';
 
 const colorArr = [
@@ -104,11 +114,7 @@ export default () => {
 
   return (
     <View className="habit-page">
-      <View className="add-habit-btn"
-        onClick={() => setShowAddHabit(true)}
-      >
-        <AtIcon value="add" color="#E9E2F8" size="22" />
-      </View>
+      <AddBtn onClick={() => setShowAddHabit(true)} />
       <View className="summary-money">
         <View className="item">
           <View className="total">
